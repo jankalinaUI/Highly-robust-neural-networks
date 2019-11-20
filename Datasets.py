@@ -8,7 +8,7 @@ class datasets:
 
         def load_auto(self):
 
-            data_mpg = p.read_csv('drive/My Drive/DataSetsAVCR/auto-mpg.csv',sep = ',')
+            data_mpg = p.read_csv('https://raw.githubusercontent.com/jankalinaUI/Datasets/master/auto-mpg.csv',sep = ',')
             data_mpg = data_mpg.drop(index = [32,126,330,336,354,374], axis = 1)
             data_mpg = data_mpg.drop(columns = ['cylinders','model year','origin','car name','Unnamed: 0'], axis = 0)
             data_mpg_x = data_mpg.iloc[:,1:5]
@@ -101,7 +101,7 @@ class datasets:
                 
                 for eps in eps:
                     
-                    data = p.read_csv('https://raw.githubusercontent.com/tomasj12/Work/master/Data/data_eps_' + str(eps) + '.csv', 
+                    data = p.read_csv('https://raw.githubusercontent.com/jankalinaUI/Datasets/master/Data/data_eps_' + str(eps) + '.csv', 
                                       sep = ',',dtype = np.float64)
                     
                     
@@ -116,7 +116,7 @@ class datasets:
             
             for eps in eps:
                 
-                data = p.read_csv('https://raw.githubusercontent.com/tomasj12/Work/master/Data_auto/auto_eps_' + str(eps) + '.csv',sep = ',',dtype = np.float64)
+                data = p.read_csv('https://github.com/jankalinaUI/Datasets/blob/master/Data_auto/auto_eps_' + str(eps) + '.csv',sep = ',',dtype = np.float64)
                 
                 dict_data[str(eps)] = data.values
             return dict_data
