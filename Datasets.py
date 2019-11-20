@@ -17,22 +17,11 @@ class datasets:
             return data_mpg_x,data_mpg_y
 
 
-        def auto_contaminated(self):
-
-            data = p.read_csv('drive/My Drive/DataSetsAVCR/auto_mpg.csv')
-            train_xx = data.iloc[:,1:5].values
-            train_yy = data.iloc[:,0].values
-
-            train_xx = train_xx.reshape((len(train_xx),train_xx.shape[1]))
-            train_yy = train_yy.reshape((len(train_yy),1))
-
-            return train_xx,train_yy
-
         def load_california_housing(self):
 
-            data_train = p.read_csv('drive/My Drive/DataSetsAVCR/california_housing_train.csv',sep = ',')
-            data_test = p.read_csv("drive/My Drive/DataSetsAVCR/california_housing_test.csv", sep = ",")
-            data_dev = p.read_csv('drive/My Drive/DataSetsAVCR/california_housing_dev.csv', sep = ',')
+            data_train = p.read_csv('https://raw.githubusercontent.com/jankalinaUI/Datasets/master/California_housing/california_housing_train.csv',sep = ',')
+            data_test = p.read_csv("https://raw.githubusercontent.com/jankalinaUI/Datasets/master/California_housing/california_housing_test.csv", sep = ",")
+            data_dev = p.read_csv('https://raw.githubusercontent.com/jankalinaUI/Datasets/master/California_housing/california_housing_dev.csv', sep = ',')
             train_x = data_train.iloc[:,1:9]
             test_x = data_test.iloc[:,[1,2,3,4]]
             dev_x = data_dev.iloc[:,1:9]
@@ -44,7 +33,7 @@ class datasets:
 
         def load_boston_housing(self):
 
-            data = p.read_csv('drive/My Drive/DataSetsAVCR/BostonHousing.csv')
+            data = p.read_csv('https://raw.githubusercontent.com/jankalinaUI/Datasets/master/BostonHousing.csv')
             train_xx = data.iloc[:,:11].values
             train_yy = data.iloc[:,11].values
 
@@ -76,7 +65,7 @@ class datasets:
                 return train_xx,train_yy
 
             elif author == 'PV1':
-                data = p.read_csv('/content/data4.txt',sep = ' ')
+                data = p.read_csv('https://raw.githubusercontent.com/jankalinaUI/Datasets/master/data4.txt',sep = ' ')
                 X = data.iloc[:,0].values
                 Y = data.iloc[:,1].values
                 
@@ -86,7 +75,7 @@ class datasets:
                 return train_xx,train_yy
                 
             elif author == 'PV2':
-                data = p.read_csv('/content/data5.txt', sep = ' ')
+                data = p.read_csv('https://raw.githubusercontent.com/jankalinaUI/Datasets/master/data5.txt', sep = ' ')
                 X = data.iloc[:,0].values
                 Y = data.iloc[:,1].values
                 
